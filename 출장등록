@@ -1,0 +1,79 @@
+CoordMode, mouse
+
+
+Click, 2988, 286 ; 추가
+Sleep, 2000
+
+Click, 2329, 361
+Sleep, 100
+send, 서울일원
+
+Click, 2335, 391
+Sleep, 500
+send, 자동차 등록업무 현지확인 처리
+
+FormatTime,day, %currentDate%,WDay
+
+if ( day = 6)
+{
+currentDate +=3, days 
+	FormatTime, currentDate3,%currentDate%,yyyy-MM-dd 
+	Click, 2340, 418 
+	send %currentDate3%
+}
+else
+{
+currentDate +=1, days 
+	FormatTime, currentDate1,%currentDate%,yyyy-MM-dd 
+	Click, 2340, 418 
+	send %currentDate1%
+}
+
+Click, 2318, 444
+Sleep, 500
+send, 09	
+send, {Tab}
+Send, 00
+send, {Tab}
+
+
+send, 18
+send, {Tab}
+send, 00
+
+send, {Tab}
+send, {Down}
+send, {Down}
+
+send, {Tab}
+send, {Down}
+
+send, {Tab}
+send, {Tab}
+send, {Tab}
+send, {Tab}
+send, {Tab}
+
+send, 이종성
+Sleep, 1000
+
+Click, 2429, 566
+Sleep, 3000
+
+Click, 922, 397
+Sleep, 2000
+
+Click, 3042, 538
+Sleep, 800
+
+Click, 2634, 570
+Sleep, 800
+
+ImageSearch, vx, vy, 2461, 523, 2868, 723, 출장확인.png
+click, vx, vy
+
+
+F3::
+{
+	ExitApp
+}
